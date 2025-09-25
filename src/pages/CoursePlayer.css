@@ -1,0 +1,542 @@
+/* ===========================
+   Base Layout
+=========================== */
+.course-player {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212529;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+.course-sidebar {
+  width: 320px;
+  background: #ffffff;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #343a40;
+}
+
+.modules-list {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ===========================
+   Module Section
+=========================== */
+.module {
+  margin-bottom: 1.5rem;
+}
+
+.module-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  padding-left: 0.5rem;
+}
+
+/* ===========================
+   Lessons
+=========================== */
+.lessons-list {
+  padding-left: 0.5rem;
+  border-left: 2px solid #dee2e6;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 0.25rem;
+  background-color: transparent;
+  min-height: 44px; /* Better touch target */
+}
+
+.lesson-item:hover {
+  background: #f1f3f5;
+}
+
+.lesson-item.active {
+  background: #007bff;
+  color: white;
+  font-weight: 500;
+}
+
+.lesson-item.completed .lesson-title {
+  text-decoration: line-through;
+  color: #28a745;
+}
+
+.lesson-item.active .lesson-title,
+.lesson-item.active .lesson-duration {
+  color: white;
+}
+
+.lesson-icon {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+.lesson-title {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #495057;
+  white-space: normal; /* Changed from nowrap to allow wrapping */
+  overflow: visible; /* Changed from hidden to ensure full visibility */
+  text-overflow: clip; /* Changed from ellipsis */
+  margin-right: 8px; /* Added spacing between title and indicators */
+}
+
+.lesson-duration {
+  font-size: 0.75rem;
+  color: #868e96;
+  flex-shrink: 0;
+  margin-left: auto; /* Push to the right */
+  padding-left: 8px; /* Add spacing from other elements */
+}
+
+.quiz-indicator {
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+/* ===========================
+   Main Content
+=========================== */
+.lesson-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Center align loading and error messages */
+.lesson-content > .loading,
+.lesson-content > .error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+/* ===========================
+   Lesson Header
+=========================== */
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.lesson-header h2 {
+  font-size: 1.6rem;
+  color: #212529;
+  margin: 0;
+  font-weight: 600;
+  flex: 1;
+  min-width: 200px; /* Prevent excessive shrinking */
+}
+
+/* ===========================
+   Lesson Actions
+=========================== */
+.lesson-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.complete-btn {
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+
+.complete-btn:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.completed-badge {
+  padding: 0.5rem 1rem;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.quiz-results-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.quiz-results-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* ===========================
+   Video Player
+=========================== */
+.video-player {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+  width: 100%;
+  position: relative;
+}
+
+.video-player video {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+/* Video loading message */
+.video-player > .loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.1rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* ===========================
+   Lesson Text
+=========================== */
+.lesson-text-content {
+  line-height: 1.7;
+  font-size: 1rem;
+  color: #343a40;
+  text-align: left;
+  width: 100%;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid #dee2e6;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 140px;
+  text-align: center;
+}
+
+.nav-btn:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+.quiz-btn {
+  background: #17a2b8;
+}
+
+.quiz-btn:hover:not(:disabled) {
+  background: #138496;
+}
+
+/* ===========================
+   Quiz Completed Card
+=========================== */
+.quiz-completed {
+  background-color: #d4edda;
+  border: 1px solid #c3e6cb;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.quiz-completed h3 {
+  margin: 0 0 10px 0;
+  color: #155724;
+  font-size: 1.4rem;
+}
+
+.quiz-completed p {
+  margin: 0 0 15px 0;
+  color: #155724;
+  font-size: 1rem;
+}
+
+.view-results-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.view-results-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* ===========================
+   Loading & Error Messages
+=========================== */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #495057;
+  text-align: center;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #dc3545;
+  text-align: center;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* ===========================
+   No Lesson Selected
+=========================== */
+.no-lesson-selected {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #6c757d;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ===========================
+   Responsive Adjustments
+=========================== */
+@media (max-width: 1024px) {
+  .course-sidebar {
+    width: 280px;
+  }
+  
+  .lesson-content {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .course-player {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .course-sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 40vh;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .lesson-content {
+    padding: 1.5rem;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  .lesson-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .lesson-header h2 {
+    font-size: 1.4rem;
+  }
+
+  .lesson-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .lesson-actions button {
+    flex: 1;
+    min-width: 120px;
+  }
+
+  .lesson-navigation {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .nav-btn {
+    width: 100%;
+  }
+
+  .video-player {
+    margin-bottom: 1.5rem;
+  }
+  
+  .video-player video {
+    max-height: 40vh;
+  }
+  
+  .lesson-text-content {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .lesson-content {
+    padding: 1rem;
+  }
+  
+  .lesson-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .lesson-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .lesson-actions button {
+    width: 100%;
+  }
+  
+  .modules-list {
+    padding: 0.5rem;
+  }
+  
+  .module {
+    margin-bottom: 1rem;
+  }
+  
+  .lesson-item {
+    padding: 0.5rem;
+  }
+  
+  .quiz-completed {
+    padding: 1rem;
+  }
+  
+  .quiz-completed h3 {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,113 @@
+/* src/pages/Dashboard.css */
+
+.dashboard-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+}
+
+.dashboard-header {
+  text-align: left;
+  margin-bottom: 2.5rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #111827;
+}
+
+.dashboard-subtitle {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #374151;
+}
+
+.loading-text,
+.empty-text {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+
+.courses-section,
+.certificates-section {
+  margin-top: 2rem;
+}
+
+.courses-grid,
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-item,
+.certificate-item {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 1.25rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.course-item:hover,
+.certificate-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.view-performance-btn,
+.browse-button,
+.back-button {
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.view-performance-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.view-performance-btn:hover {
+  background: #1d4ed8;
+  transform: scale(1.02);
+}
+
+.browse-button {
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+}
+
+.browse-button:hover {
+  background: #059669;
+  transform: scale(1.02);
+}
+
+.back-button {
+  background: #f3f4f6;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  background: #e5e7eb;
+}

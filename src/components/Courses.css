@@ -1,0 +1,35 @@
+/* src/pages/Courses.css */
+.courses-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.courses-header {
+  margin-bottom: 2rem;
+}
+
+.courses-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.courses-header p {
+  font-size: 1.125rem;
+  color: #718096;
+}
+
+.courses-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #718096;
+  font-size: 1.125rem;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}

@@ -1,0 +1,503 @@
+/* ===========================
+   Base Layout
+=========================== */
+.course-player {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f7fa;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #212529;
+}
+
+/* ===========================
+   Sidebar
+=========================== */
+.course-sidebar {
+  width: 320px;
+  background: #ffffff;
+  border-right: 1px solid #dee2e6;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid #dee2e6;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.sidebar-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  color: #343a40;
+}
+
+.modules-list {
+  padding: 1rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+/* ===========================
+   Module Section
+=========================== */
+.module {
+  margin-bottom: 1.5rem;
+}
+
+.module-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #495057;
+  padding-left: 0.5rem;
+}
+
+/* ===========================
+   Lessons
+=========================== */
+.lessons-list {
+  padding-left: 0.5rem;
+  border-left: 2px solid #dee2e6;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin-bottom: 0.25rem;
+  background-color: transparent;
+}
+
+.lesson-item:hover {
+  background: #f1f3f5;
+}
+
+.lesson-item.active {
+  background: #007bff;
+  color: white;
+  font-weight: 500;
+}
+
+.lesson-item.completed .lesson-title {
+  text-decoration: line-through;
+  color: #28a745;
+}
+
+.lesson-item.active .lesson-title,
+.lesson-item.active .lesson-duration {
+  color: white;
+}
+
+.lesson-icon {
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.lesson-title {
+  flex: 1;
+  font-size: 0.9rem;
+  color: #495057;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.lesson-duration {
+  font-size: 0.75rem;
+  color: #868e96;
+}
+
+.quiz-indicator {
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+/* ===========================
+   Main Content
+=========================== */
+.lesson-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Lesson Header
+=========================== */
+.lesson-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.lesson-header h2 {
+  font-size: 1.6rem;
+  color: #212529;
+  margin: 0;
+  font-weight: 600;
+}
+
+/* ===========================
+   Lesson Actions
+=========================== */
+.lesson-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.complete-btn {
+  padding: 0.5rem 1rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.complete-btn:hover {
+  background: #218838;
+  transform: translateY(-1px);
+}
+
+.completed-badge {
+  padding: 0.5rem 1rem;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.download-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.quiz-results-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.quiz-results-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* ===========================
+   Video Player
+=========================== */
+.video-player {
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #000;
+}
+
+.video-player video {
+  width: 100%;
+  height: auto;
+  max-height: 65vh;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+/* ===========================
+   Lesson Text Content
+   (Styled like PDF export)
+=========================== */
+.lesson-text-content {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-top: 20px;
+}
+
+/* Headings */
+.lesson-text-content h1,
+.lesson-text-content h2,
+.lesson-text-content h3 {
+  color: #2c3e50;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.lesson-text-content h1 {
+  font-size: 1.75rem;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
+}
+
+.lesson-text-content h2 {
+  font-size: 1.4rem;
+  border-bottom: 1px solid #3498db;
+  padding-bottom: 6px;
+}
+
+.lesson-text-content h3 {
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+/* Paragraphs */
+.lesson-text-content p {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Links */
+.lesson-text-content a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px dotted #3498db;
+  transition: color 0.2s;
+}
+
+.lesson-text-content a:hover {
+  color: #1d6fa5;
+  border-bottom-color: #1d6fa5;
+}
+
+/* Lists */
+.lesson-text-content ul,
+.lesson-text-content ol {
+  margin: 1rem 0 1rem 1.5rem;
+  color: #2c3e50;
+}
+
+.lesson-text-content li {
+  margin-bottom: 0.5rem;
+}
+
+/* Blockquotes */
+.lesson-text-content blockquote {
+  border-left: 4px solid #3498db;
+  padding-left: 1rem;
+  color: #7f8c8d;
+  font-style: italic;
+  margin: 1rem 0;
+}
+
+/* Footer-like note */
+.lesson-footer-note {
+  margin-top: 40px;
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 12px;
+  border-top: 1px solid #dee2e6;
+  padding-top: 10px;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+.lesson-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.nav-btn {
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.nav-btn:disabled {
+  background: #adb5bd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.nav-btn:hover:not(:disabled) {
+  background: #0056b3;
+  transform: translateY(-1px);
+}
+
+/* ===========================
+   Quiz Sections
+=========================== */
+.quiz-prompt {
+  background-color: #f8f9fa;
+  border-left: 4px solid #3498db;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.quiz-prompt h3 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.quiz-prompt p {
+  margin: 0 0 15px 0;
+  color: #7f8c8d;
+}
+
+.quiz-start-btn {
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.quiz-start-btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+.quiz-completed {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.quiz-completed h3 {
+  margin: 0 0 10px 0;
+  color: #155724;
+}
+
+.quiz-completed p {
+  margin: 0;
+  color: #155724;
+}
+
+.view-results-btn {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a52 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.view-results-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+
+/* ===========================
+   Loading & Error
+=========================== */
+.loading,
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
+  color: #495057;
+}
+
+.error {
+  color: #dc3545;
+}
+
+/* ===========================
+   No Lesson Selected
+=========================== */
+.no-lesson-selected {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+/* ===========================
+   Responsive Adjustments
+=========================== */
+@media (max-width: 768px) {
+  .course-player {
+    flex-direction: column;
+  }
+
+  .course-sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .lesson-content {
+    padding: 1rem;
+  }
+
+  .lesson-navigation {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .nav-btn {
+    width: 100%;
+  }
+
+  .lesson-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .download-btn,
+  .quiz-results-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
